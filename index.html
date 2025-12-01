@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Large Motion Video Autoencoding with Cross-modal Video VAE">
-  <meta name="keywords" content="video vae, video compression, video generation">
+        content="Structure From Tracking: Distilling Structure-Preserving Motion for Video Generation">
+  <meta name="keywords" content="video generation, representation learning, Segment Anything 2">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Large Motion Video Autoencoding with Cross-modal Video VAE</title>
+  <title>Structure From Tracking: Distilling Structure-Preserving Motion for Video Generation</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -47,50 +47,64 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Large Motion Video Autoencoding with Cross-modal Video VAE</h1>
+          <h1 class="title is-1 publication-title">Structure From Tracking: Distilling Structure-Preserving Motion for Video Generation</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://yzxing87.github.io">Yazhou Xing<span>*</span></a>,</span>
-            <span class="author-block">
-              <a href="https://sunfly04.github.io">Yang Fei<span>*</span></a>,</span>
-            <span class="author-block">
-              <a href="https://yingqinghe.github.io">Yingqing He<span>*</span><span>†</span></a>,
+              <a href="https://sunfly04.github.io">Yang Fei<sup>1</sup></a>,
             </span>
             <span class="author-block">
-              <a href="https://jingyechen.github.io">Jingye Chen</a>,
+              <a href="https://gstoica27.github.io">George Stoica<sup>2</sup></a>,
             </span>
             <span class="author-block">
-              <a href="https://jiaxinxie97.github.io/Jiaxin-Xie">Jiaxin Xie</a>,
+              <a href="https://fdjingyuan.github.io">Jingyuan Liu<sup>3</sup></a>,
             </span>
             <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=Vl1X_-sAAAAJ&hl=zh-CN">Xiaowei Chi</a>,
+              <a href="https://cqf.io">Qifeng Chen<sup>1</sup><span>*</span></a>,
             </span>
             <span class="author-block">
-              <a href="https://cqf.io">Qifeng Chen<span>†</span></a>
+              <a href="https://ranjaykrishna.com">Ranjay Krishna<sup>2</sup></a>,
+            </span>
+            <span class="author-block">
+              <a href="https://jeanne-wang.github.io">Xiaojuan Wang<sup>2</sup></a>,
+            </span>
+            <span class="author-block">
+              <a href="https://liubl1217.github.io/">Benlin Liu<sup>2</sup><span>*</span></a>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block">The Hong Kong University of Science and Technology</span>
+            <span class="author-block"><sup>1</sup>The Hong Kong University of Science and Technology,</span>
+            <span class="author-block"><sup>2</sup>University of Washington,</span>
+            <span class="author-block"><sup>3</sup>Adobe</span>
           </div>
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><span>*</span>equal contribution</span>,
-            <span class="author-block"><span>†</span>Corresponding Author</span>
+            <span class="author-block"><span>*</span>Corresponding Authors</span>
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
+                <a href="static/SAM2VideoX.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>PDF</span>
+                </a>
+              </span>
+              <span class="link-block">
                 <a href="path/to/paper.pdf"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
-                  <span>Paper</span>
+                  <span>Arxiv (Coming Soon!)</span>
                 </a>
               </span>
               <!-- Video Link. -->
+               <!--
+              </div>/
               <span class="link-block">
                 <a href="https://www.youtube.com/embed/Kb4rn9z9xAA"
                    class="external-link button is-normal is-rounded is-dark">
@@ -100,14 +114,15 @@
                   <span>Video</span>
                 </a>
               </span>
+              -->
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/yzxing87/vae"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
-                  <span>Code</span>
+                  <span>Code (Coming Soon!)</span>
                   </a>
               </span>
             </div>
@@ -127,7 +142,7 @@
                 type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
-        Our VAE reconstructs videos with high-fidelity, even for large motion scenarios.
+        Our SAM2VideoX produces videos with superior or highly competitive fidelity compared to advanced image-to-video models.
       </h2>
     </div>
   </div>
@@ -223,11 +238,17 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
-        <img src="static/images/architecture.png" id="overall"><br><br>
+        <img src="static/images/overall.png" id="overall"><br><br>
         <div class="content has-text-justified">
           <p>
-            Learning a robust video Variational Autoencoder (VAE) is essential for reducing video redundancy and facilitating efficient video generation. Directly applying image VAEs to individual frames in isolation can result in temporal inconsistencies and suboptimal compression rates due to a lack of temporal compression. Existing Video VAEs have begun to address temporal compression; however, they often suffer from inadequate reconstruction performance. In this paper, we present a novel and powerful video autoencoder capable of high-fidelity video encoding. First, we observe that entangling spatial and temporal compression by merely extending the image VAE to a 3D VAE can introduce motion blur and detail distortion artifacts. Thus, we propose temporal-aware spatial compression to better encode and decode the spatial information. Additionally, we integrate a lightweight motion compression model for further temporal compression. Second, we propose to leverage the textual information inherent in text-to-video datasets and incorporate text guidance into our model. This significantly enhances reconstruction quality, particularly in terms of detail preservation and temporal stability.
-            Third, we further improve the versatility of our model through joint training on both images and videos, which not only enhances reconstruction quality but also enables the model to perform both image and video autoencoding. Extensive evaluations against strong recent baselines demonstrate the superior performance of our method.
+            Reality is a dance between rigid constraints and deformable structures. For video models, that means generating motion that preserves fidelity as well as <i>structure</i>.
+            Despite progress in diffusion models, producing realistic structure-preserving motion remains challenging, especially for articulated and deformable objects such as humans and animals. 
+            Scaling training data alone, so far, has failed to resolve physically implausible transitions. 
+            Existing approaches rely on conditioning with noisy motion representations, such as optical flow or skeletons extracted using an external imperfect model.
+            To address these challenges, we introduce an algorithm to distill structure-preserving motion priors from an autoregressive video tracking model (SAM2) into a bidirectional video diffusion model (CogVideoX). 
+            With our method, we train SAM2VideoX, which contains two innovations: (1) a <i>bidirectional feature fusion</i> module that extracts global structure-preserving motion priors from a recurrent model like SAM2; (2) a <i>Local Gram Flow</i> loss that aligns how local features move together.
+            Experiments on VBench and in human studies show that SAM2VideoX delivers consistent gains (+2.60% on VBench, 21-22% lower FVD, and 71.4% human preference) over prior baselines.
+            Specifically, on VBench, we achieve 95.51%, surpassing REPA (92.91%) by 2.60%, and reduce FVD to 360.57, a 21.20% and 22.46% improvement over REPA- and LoRA-finetuning, respectively.
           </p>
         </div>
       </div>
@@ -322,11 +343,11 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{xing2024videovae,
-  author    = {Yazhou Xing, Yang Fei, Yingqing He, Jingye Chen, Jiaxin Xie, Xiaowei Chi, Qifeng Chen},
-  title     = {Large Motion Video Autoencoding with Cross-modal Video VAE},
+    <pre><code>@article{fei2025sam2videox,
+  author    = {Yang Fei, George Stoica, Jingyuan Liu, Qifeng Chen, Ranjay Krishna, Xiaojuan Wang, Benlin Liu},
+  title     = {Structure From Tracking: Distilling Structure-Preserving Motion for Video Generation},
   journal   = {Arxiv},
-  year      = {2024},
+  year      = {2025},
 }</code></pre>
   </div>
 </section>
