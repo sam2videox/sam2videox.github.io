@@ -39,7 +39,21 @@ $(document).ready(function() {
     }
 
 		// Initialize all div with carousel class
-    var carousels = bulmaCarousel.attach('.carousel', options);
+    // var carousels = bulmaCarousel.attach('.carousel', options);
+
+    // Initialize main results carousel
+    var carousels = bulmaCarousel.attach('#results-carousel', options);
+
+    var comparisonOptions = {
+      slidesToScroll: 1,
+      slidesToShow: 1,
+      loop: true,
+      infinite: true,
+      autoplay: false,
+      autoplaySpeed: 3000,
+    }
+    bulmaCarousel.attach('#comparison-carousel', comparisonOptions);
+    bulmaCarousel.attach('#baseline-carousel', comparisonOptions);
 
     // Loop on each carousel initialized
     for(var i = 0; i < carousels.length; i++) {
