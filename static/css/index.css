@@ -19,17 +19,75 @@ body {
 
 
 .teaser .hero-body {
-  padding-top: 0;
-  padding-bottom: 3rem;
+  padding-top: 0.5rem;
+  padding-bottom: 4rem;
 }
 
 .teaser {
   font-family: 'Google Sans', sans-serif;
 }
 
-
-.publication-title {
+.teaser-inner {
+  max-width: 1600px;
+  margin: 0 auto;
 }
+
+.teaser-figure {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-end;
+}
+
+.teaser-panel {
+  flex: 1 1 240px;
+  text-align: center;
+}
+
+.teaser-frame {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  border-radius: 18px;
+  border: 2px solid #111;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+}
+
+.teaser-frame.highlight {
+  border-color: #3b82f6;
+  box-shadow: 0 26px 60px rgba(59, 130, 246, 0.35);
+}
+
+.teaser-frame img,
+.teaser-frame video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.teaser-label-small {
+  margin-top: 0.65rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #444;
+  white-space: nowrap;
+}
+
+.teaser-caption {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 1024px) {
+  .teaser-figure {
+    flex-direction: column;
+  }
+}
+
 
 .publication-banner {
   max-height: parent;
@@ -42,9 +100,6 @@ body {
   top: auto;
   transform: none;
   object-fit: fit;
-}
-
-.publication-header .hero-body {
 }
 
 .publication-title {
@@ -67,9 +122,6 @@ body {
     font-weight: bolder;
 }
 
-.publication-authors {
-}
-
 .publication-authors a {
    color: hsl(204, 86%, 53%) !important;
 }
@@ -80,13 +132,6 @@ body {
 
 .author-block {
   display: inline-block;
-}
-
-.publication-banner img {
-}
-
-.publication-authors {
-  /*color: #4286f4;*/
 }
 
 .publication-video {
@@ -105,9 +150,6 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-}
-
-.publication-body img {
 }
 
 .results-carousel {
@@ -136,9 +178,6 @@ body {
 .interpolation-panel .interpolation-image {
   width: 100%;
   border-radius: 5px;
-}
-
-.interpolation-video-column {
 }
 
 .interpolation-panel .slider {
