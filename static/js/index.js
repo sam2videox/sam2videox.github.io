@@ -95,6 +95,7 @@ $(document).ready(function() {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
           if (entry.target.paused) {
+            entry.target.preload = 'auto';
             entry.target.play().catch(function(e) { console.log("Play error:", e); });
           }
         } else {
@@ -103,7 +104,7 @@ $(document).ready(function() {
           }
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.1, rootMargin: '200px' });
 
     videos.forEach(function(video) {
       observer.observe(video);

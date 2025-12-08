@@ -66,26 +66,27 @@
               <a href="https://fdjingyuan.github.io">Jingyuan Liu<sup>3</sup></a>,
             </span>
             <span class="author-block">
-              <a href="https://cqf.io">Qifeng Chen<sup>1</sup><span>*</span></a>,
+              <a href="https://cqf.io">Qifeng Chen<sup>1</sup><span>†</span></a>,
             </span>
             <span class="author-block">
               <a href="https://ranjaykrishna.com">Ranjay Krishna<sup>2</sup></a>,
             </span>
             <span class="author-block">
-              <a href="https://jeanne-wang.github.io">Xiaojuan Wang<sup>2</sup></a>,
+              <a href="https://jeanne-wang.github.io">Xiaojuan Wang<sup>2<span>*</span></a>,
             </span>
             <span class="author-block">
-              <a href="https://liubl1217.github.io/">Benlin Liu<sup>2</sup><span>*</span></a>
+              <a href="https://liubl1217.github.io/">Benlin Liu<sup>2<span>*</span><span>†</span></a>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>The Hong Kong University of Science and Technology,</span>
+            <span class="author-block"><sup>1</sup>Hong Kong University of Science and Technology,</span>
             <span class="author-block"><sup>2</sup>University of Washington,</span>
             <span class="author-block"><sup>3</sup>Adobe</span>
           </div>
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><span>*</span>Corresponding Authors</span>
+            <span class="author-block"><span>*</span>Equal Advising</span>
+            <span class="author-block"><span>†</span>Corresponding Authors</span>
           </div>
 
           <div class="column has-text-centered">
@@ -154,7 +155,7 @@
           </div>
           <div class="teaser-panel">
             <div class="teaser-frame">
-              <video autoplay muted loop playsinline>
+              <video preload="none" muted loop playsinline>
                 <source src="static/videos/teaser/base.mp4" type="video/mp4">
               </video>
             </div>
@@ -162,7 +163,7 @@
           </div>
           <div class="teaser-panel">
             <div class="teaser-frame">
-              <video autoplay muted loop playsinline>
+              <video preload="none" muted loop playsinline>
                 <source src="static/videos/teaser/lora.mp4" type="video/mp4">
               </video>
             </div>
@@ -170,7 +171,7 @@
           </div>
           <div class="teaser-panel">
             <div class="teaser-frame highlight">
-              <video autoplay muted loop playsinline>
+              <video preload="none" muted loop playsinline>
                 <source src="static/videos/teaser/ours.mp4" type="video/mp4">
               </video>
             </div>
@@ -181,6 +182,35 @@
           Our SAM2VideoX produces videos with superior or highly competitive fidelity compared to advanced image-to-video models.
         </h2>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Why Distills from SAM2?</h2>
+    <div class="columns is-centered">
+      <div class="column has-text-centered">
+        <div class="content">
+          <video preload="none" id="raw-video" controls muted loop playsinline width="75%">
+            <source src="static/videos/motivation/raw.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-centered">Raw Input Video</p>
+        </div>
+      </div>
+      <div class="column has-text-centered">
+        <div class="content">
+          <video preload="none" id="sam2-video" controls muted loop playsinline width="75%">
+            <source src="static/videos/motivation/sam2_pca.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-centered">SAM2 Feature PCA</p>
+        </div>
+      </div>
+    </div>
+    <div class="content has-text-justified">
+      <p>
+        "SAM2's internal representations are dense, continuous, and temporally consistent. They capture object motion and part-level dynamics, providing rich structural priors that standard diffusion models lack."
+      </p>
     </div>
   </div>
 </section>
@@ -205,34 +235,34 @@
         <div class="item">
           <div class="columns is-centered is-mobile">
             <div class="column">
-              <video autoplay controls muted loop playsinline width="100%">
+              <video preload="none" controls muted loop playsinline width="100%">
                 <source src="./static/videos/img2vid/1/cogvideox.mp4" type="video/mp4">
               </video>
             </div>
             <div class="column">
-              <video autoplay controls muted loop playsinline width="100%">
+              <video preload="none" controls muted loop playsinline width="100%">
                 <source src="./static/videos/img2vid/1/hunyuanvid.mp4" type="video/mp4">
               </video>
             </div>
             <div class="column">
-              <video autoplay controls muted loop playsinline width="100%">
+              <video preload="none" controls muted loop playsinline width="100%">
                 <source src="./static/videos/img2vid/1/ours.mp4" type="video/mp4">
               </video>
             </div>
           </div>
           <div class="columns is-centered is-mobile">
             <div class="column">
-              <video autoplay controls muted loop playsinline width="100%">
+              <video preload="none" controls muted loop playsinline width="100%">
                 <source src="./static/videos/img2vid/2/cogvideox.mp4" type="video/mp4">
               </video>
             </div>
             <div class="column">
-              <video autoplay controls muted loop playsinline width="100%">
+              <video preload="none" controls muted loop playsinline width="100%">
                 <source src="./static/videos/img2vid/2/hunyuanvid.mp4" type="video/mp4">
               </video>
             </div>
             <div class="column">
-              <video autoplay controls muted loop playsinline width="100%">
+              <video preload="none" controls muted loop playsinline width="100%">
                 <source src="./static/videos/img2vid/2/ours.mp4" type="video/mp4">
               </video>
             </div>
@@ -242,34 +272,34 @@
         <div class="item">
           <div class="columns is-centered is-mobile">
             <div class="column">
-              <video autoplay controls muted loop playsinline width="100%">
-                <source src="./static/videos/img2vid/3/cogivdeox.mp4" type="video/mp4">
+              <video preload="none" controls muted loop playsinline width="100%">
+                <source src="./static/videos/img2vid/3/cogvideox.mp4" type="video/mp4">
               </video>
             </div>
             <div class="column">
-              <video autoplay controls muted loop playsinline width="100%">
+              <video preload="none" controls muted loop playsinline width="100%">
                 <source src="./static/videos/img2vid/3/hunyuanvid.mp4" type="video/mp4">
               </video>
             </div>
             <div class="column">
-              <video autoplay controls muted loop playsinline width="100%">
+              <video preload="none" controls muted loop playsinline width="100%">
                 <source src="./static/videos/img2vid/3/ours.mp4" type="video/mp4">
               </video>
             </div>
           </div>
           <div class="columns is-centered is-mobile">
             <div class="column">
-              <video autoplay controls muted loop playsinline width="100%">
+              <video preload="none" controls muted loop playsinline width="100%">
                 <source src="./static/videos/img2vid/4/cogvideox.mp4" type="video/mp4">
               </video>
             </div>
             <div class="column">
-              <video autoplay controls muted loop playsinline width="100%">
+              <video preload="none" controls muted loop playsinline width="100%">
                 <source src="./static/videos/img2vid/4/hunyuanvid.mp4" type="video/mp4">
               </video>
             </div>
             <div class="column">
-              <video autoplay controls muted loop playsinline width="100%">
+              <video preload="none" controls muted loop playsinline width="100%">
                 <source src="./static/videos/img2vid/4/ours.mp4" type="video/mp4">
               </video>
             </div>
@@ -279,35 +309,72 @@
         <div class="item">
           <div class="columns is-centered is-mobile">
             <div class="column">
-              <video autoplay controls muted loop playsinline width="100%">
+              <video preload="none" controls muted loop playsinline width="100%">
                 <source src="./static/videos/img2vid/5/cogvideox.mp4" type="video/mp4">
               </video>
             </div>
             <div class="column">
-              <video autoplay controls muted loop playsinline width="100%">
+              <video preload="none" controls muted loop playsinline width="100%">
                 <source src="./static/videos/img2vid/5/hunyuanvid.mp4" type="video/mp4">
               </video>
             </div>
             <div class="column">
-              <video autoplay controls muted loop playsinline width="100%">
+              <video preload="none" controls muted loop playsinline width="100%">
                 <source src="./static/videos/img2vid/5/ours.mp4" type="video/mp4">
               </video>
             </div>
           </div>
           <div class="columns is-centered is-mobile">
             <div class="column">
-              <video autoplay controls muted loop playsinline width="100%">
+              <video preload="none" controls muted loop playsinline width="100%">
                 <source src="./static/videos/img2vid/6/cogvideox.mp4" type="video/mp4">
               </video>
             </div>
             <div class="column">
-              <video autoplay controls muted loop playsinline width="100%">
+              <video preload="none" controls muted loop playsinline width="100%">
                 <source src="./static/videos/img2vid/6/hunyuanvid.mp4" type="video/mp4">
               </video>
             </div>
             <div class="column">
-              <video autoplay controls muted loop playsinline width="100%">
+              <video preload="none" controls muted loop playsinline width="100%">
                 <source src="./static/videos/img2vid/6/ours.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="columns is-centered is-mobile">
+            <div class="column">
+              <video preload="none" controls muted loop playsinline width="100%">
+                <source src="./static/videos/img2vid/7/cogvideox.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column">
+              <video preload="none" controls muted loop playsinline width="100%">
+                <source src="./static/videos/img2vid/7/hunyuanvid.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column">
+              <video preload="none" controls muted loop playsinline width="100%">
+                <source src="./static/videos/img2vid/7/ours.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="columns is-centered is-mobile">
+            <div class="column">
+              <video preload="none" controls muted loop playsinline width="100%">
+                <source src="./static/videos/img2vid/8/cogvideox.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column">
+              <video preload="none" controls muted loop playsinline width="100%">
+                <source src="./static/videos/img2vid/8/hunyuanvid.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column">
+              <video preload="none" controls muted loop playsinline width="100%">
+                <source src="./static/videos/img2vid/8/ours.mp4" type="video/mp4">
               </video>
             </div>
           </div>
@@ -376,22 +443,22 @@
     <div id="baseline-grid">
       <div class="columns is-centered is-mobile">
         <div class="column">
-          <video autoplay controls muted loop playsinline width="100%">
+          <video preload="none" controls muted loop playsinline width="100%">
             <source src="./static/videos/baselines/1/base.mp4" type="video/mp4">
           </video>
         </div>
         <div class="column">
-          <video autoplay controls muted loop playsinline width="100%">
+          <video preload="none" controls muted loop playsinline width="100%">
             <source src="./static/videos/baselines/1/lora.mp4" type="video/mp4">
           </video>
         </div>
         <div class="column">
-          <video autoplay controls muted loop playsinline width="100%">
+          <video preload="none" controls muted loop playsinline width="100%">
             <source src="./static/videos/baselines/1/mask.mp4" type="video/mp4">
           </video>
         </div>
         <div class="column">
-          <video autoplay controls muted loop playsinline width="100%">
+          <video preload="none" controls muted loop playsinline width="100%">
             <source src="./static/videos/baselines/1/ours.mp4" type="video/mp4">
           </video>
         </div>
@@ -399,22 +466,22 @@
 
       <div class="columns is-centered is-mobile">
         <div class="column">
-          <video autoplay controls muted loop playsinline width="100%">
+          <video preload="none" controls muted loop playsinline width="100%">
             <source src="./static/videos/baselines/2/base.mp4" type="video/mp4">
           </video>
         </div>
         <div class="column">
-          <video autoplay controls muted loop playsinline width="100%">
+          <video preload="none" controls muted loop playsinline width="100%">
             <source src="./static/videos/baselines/2/lora.mp4" type="video/mp4">
           </video>
         </div>
         <div class="column">
-          <video autoplay controls muted loop playsinline width="100%">
+          <video preload="none" controls muted loop playsinline width="100%">
             <source src="./static/videos/baselines/2/mask.mp4" type="video/mp4">
           </video>
         </div>
         <div class="column">
-          <video autoplay controls muted loop playsinline width="100%">
+          <video preload="none" controls muted loop playsinline width="100%">
             <source src="./static/videos/baselines/2/ours.mp4" type="video/mp4">
           </video>
         </div>
@@ -422,22 +489,22 @@
 
       <div class="columns is-centered is-mobile">
         <div class="column">
-          <video autoplay controls muted loop playsinline width="100%">
+          <video preload="none" controls muted loop playsinline width="100%">
             <source src="./static/videos/baselines/3/base.mp4" type="video/mp4">
           </video>
         </div>
         <div class="column">
-          <video autoplay controls muted loop playsinline width="100%">
+          <video preload="none" controls muted loop playsinline width="100%">
             <source src="./static/videos/baselines/3/lora.mp4" type="video/mp4">
           </video>
         </div>
         <div class="column">
-          <video autoplay controls muted loop playsinline width="100%">
+          <video preload="none" controls muted loop playsinline width="100%">
             <source src="./static/videos/baselines/3/mask.mp4" type="video/mp4">
           </video>
         </div>
         <div class="column">
-          <video autoplay controls muted loop playsinline width="100%">
+          <video preload="none" controls muted loop playsinline width="100%">
             <source src="./static/videos/baselines/3/ours.mp4" type="video/mp4">
           </video>
         </div>
@@ -445,22 +512,22 @@
 
       <div class="columns is-centered is-mobile">
         <div class="column">
-          <video autoplay controls muted loop playsinline width="100%">
+          <video preload="none" controls muted loop playsinline width="100%">
             <source src="./static/videos/baselines/4/base.mp4" type="video/mp4">
           </video>
         </div>
         <div class="column">
-          <video autoplay controls muted loop playsinline width="100%">
+          <video preload="none" controls muted loop playsinline width="100%">
             <source src="./static/videos/baselines/4/lora.mp4" type="video/mp4">
           </video>
         </div>
         <div class="column">
-          <video autoplay controls muted loop playsinline width="100%">
+          <video preload="none" controls muted loop playsinline width="100%">
             <source src="./static/videos/baselines/4/mask.mp4" type="video/mp4">
           </video>
         </div>
         <div class="column">
-          <video autoplay controls muted loop playsinline width="100%">
+          <video preload="none" controls muted loop playsinline width="100%">
             <source src="./static/videos/baselines/4/ours.mp4" type="video/mp4">
           </video>
         </div>
@@ -468,22 +535,22 @@
 
       <div class="columns is-centered is-mobile">
         <div class="column">
-          <video autoplay controls muted loop playsinline width="100%">
+          <video preload="none" controls muted loop playsinline width="100%">
             <source src="./static/videos/baselines/5/base.mp4" type="video/mp4">
           </video>
         </div>
         <div class="column">
-          <video autoplay controls muted loop playsinline width="100%">
+          <video preload="none" controls muted loop playsinline width="100%">
             <source src="./static/videos/baselines/5/LoRA.mp4" type="video/mp4">
           </video>
         </div>
         <div class="column">
-          <video autoplay controls muted loop playsinline width="100%">
+          <video preload="none" controls muted loop playsinline width="100%">
             <source src="./static/videos/baselines/5/mask.mp4" type="video/mp4">
           </video>
         </div>
         <div class="column">
-          <video autoplay controls muted loop playsinline width="100%">
+          <video preload="none" controls muted loop playsinline width="100%">
             <source src="./static/videos/baselines/5/ours.mp4" type="video/mp4">
           </video>
         </div>
@@ -491,23 +558,67 @@
 
       <div class="columns is-centered is-mobile">
         <div class="column">
-          <video autoplay controls muted loop playsinline width="100%">
+          <video preload="none" controls muted loop playsinline width="100%">
             <source src="./static/videos/baselines/6/base.mp4" type="video/mp4">
           </video>
         </div>
         <div class="column">
-          <video autoplay controls muted loop playsinline width="100%">
+          <video preload="none" controls muted loop playsinline width="100%">
             <source src="./static/videos/baselines/6/lora.mp4" type="video/mp4">
           </video>
         </div>
         <div class="column">
-          <video autoplay controls muted loop playsinline width="100%">
+          <video preload="none" controls muted loop playsinline width="100%">
             <source src="./static/videos/baselines/6/mask.mp4" type="video/mp4">
           </video>
         </div>
         <div class="column">
-          <video autoplay controls muted loop playsinline width="100%">
+          <video preload="none" controls muted loop playsinline width="100%">
             <source src="./static/videos/baselines/6/ours.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="columns is-centered is-mobile">
+        <div class="column">
+          <video preload="none" controls muted loop playsinline width="100%">
+            <source src="./static/videos/baselines/7/base.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="column">
+          <video preload="none" controls muted loop playsinline width="100%">
+            <source src="./static/videos/baselines/7/lora.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="column">
+          <video preload="none" controls muted loop playsinline width="100%">
+            <source src="./static/videos/baselines/7/mask.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="column">
+          <video preload="none" controls muted loop playsinline width="100%">
+            <source src="./static/videos/baselines/7/ours.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="columns is-centered is-mobile">
+        <div class="column">
+          <video preload="none" controls muted loop playsinline width="100%">
+            <source src="./static/videos/baselines/8/base.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="column">
+          <video preload="none" controls muted loop playsinline width="100%">
+            <source src="./static/videos/baselines/8/lora.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="column">
+          <video preload="none" controls muted loop playsinline width="100%">
+            <source src="./static/videos/baselines/8/mask.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="column">
+          <video preload="none" controls muted loop playsinline width="100%">
+            <source src="./static/videos/baselines/8/ours.mp4" type="video/mp4">
           </video>
         </div>
       </div>
@@ -515,53 +626,139 @@
   </div>
 </section>
 
-<!-- More Showcases Section -->
+<!-- Video Gallery Section -->
 <section class="section">
   <div class="container is-max-widescreen">
-    <h2 class="title is-3 has-text-centered">More Qualitative Results generated by SAM2VideoX</h2>
-    <div id="results-carousel" class="carousel results-carousel">
-      <div class="item">
-        <video poster="" autoplay controls muted loop playsinline height="100%">
-          <source src="static/videos/more/pushup.mp4"
-                  type="video/mp4">
+    <h2 class="title is-3 has-text-centered">Video Gallery</h2>
+
+    <div class="tabs is-centered is-boxed">
+      <ul>
+        <li class="is-active" onclick="openTab(event, 'all')"><a>All</a></li>
+        <li onclick="openTab(event, 'human')"><a>Human Motion</a></li>
+        <li onclick="openTab(event, 'animal')"><a>Animal Locomotion</a></li>
+        <li onclick="openTab(event, 'object')"><a>Object Interaction</a></li>
+      </ul>
+    </div>
+
+    <div class="columns is-multiline" id="gallery-content">
+      <!-- Human Motion -->
+      <div class="column is-4-desktop is-6-tablet gallery-item" data-category="human">
+        <video preload="none" controls muted loop playsinline width="100%">
+          <source src="static/videos/more/gallery_human_1.mp4" type="video/mp4">
         </video>
       </div>
-      <!--
-      <div class="item">
-        <video poster="" autoplay controls muted loop playsinline height="100%">
-          <source src="static/videos/more/moose.mp4"
-                  type="video/mp4">
+      <div class="column is-4-desktop is-6-tablet gallery-item" data-category="human">
+        <video preload="none" controls muted loop playsinline width="100%">
+          <source src="static/videos/more/gallery_human_2.mp4" type="video/mp4">
         </video>
       </div>
-    -->
-      <div class="item">
-        <video poster="" autoplay controls muted loop playsinline height="100%">
-          <source src="static/videos/more/cyclist.mp4"
-                  type="video/mp4">
+      <div class="column is-4-desktop is-6-tablet gallery-item" data-category="human">
+        <video preload="none" controls muted loop playsinline width="100%">
+          <source src="static/videos/more/gallery_human_3.mp4" type="video/mp4">
         </video>
       </div>
-      <div class="item">
-        <video poster="" autoplay controls muted loop playsinline height="100%">
-          <source src="static/videos/more/pushup2.mp4"
-                  type="video/mp4">
+      <div class="column is-4-desktop is-6-tablet gallery-item" data-category="human">
+        <video preload="none" controls muted loop playsinline width="100%">
+          <source src="static/videos/more/gallery_human_4.mp4" type="video/mp4">
         </video>
       </div>
-      
-      <div class="item">
-        <video poster="" autoplay controls muted loop playsinline height="100%">
-          <source src="static/videos/more/man_walk.mp4"
-                  type="video/mp4">
+      <div class="column is-4-desktop is-6-tablet gallery-item" data-category="human">
+        <video preload="none" controls muted loop playsinline width="100%">
+          <source src="static/videos/more/gallery_human_5.mp4" type="video/mp4">
         </video>
       </div>
-      <div class="item">
-        <video poster="" autoplay controls muted loop playsinline height="100%">
-          <source src="static/videos/more/barbell.mp4"
-                  type="video/mp4">
+      <div class="column is-4-desktop is-6-tablet gallery-item" data-category="human">
+        <video preload="none" controls muted loop playsinline width="100%">
+          <source src="static/videos/more/gallery_human_6.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- Animal Locomotion -->
+      <div class="column is-4-desktop is-6-tablet gallery-item" data-category="animal">
+        <video preload="none" controls muted loop playsinline width="100%">
+          <source src="static/videos/more/gallery_animal_1.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-4-desktop is-6-tablet gallery-item" data-category="animal">
+        <video preload="none" controls muted loop playsinline width="100%">
+          <source src="static/videos/more/gallery_animal_2.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-4-desktop is-6-tablet gallery-item" data-category="animal">
+        <video preload="none" controls muted loop playsinline width="100%">
+          <source src="static/videos/more/gallery_animal_3.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-4-desktop is-6-tablet gallery-item" data-category="animal">
+        <video preload="none" controls muted loop playsinline width="100%">
+          <source src="static/videos/more/gallery_animal_4.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-4-desktop is-6-tablet gallery-item" data-category="animal">
+        <video preload="none" controls muted loop playsinline width="100%">
+          <source src="static/videos/more/gallery_animal_5.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-4-desktop is-6-tablet gallery-item" data-category="animal">
+        <video preload="none" controls muted loop playsinline width="100%">
+          <source src="static/videos/more/gallery_animal_6.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- Object Interaction -->
+      <div class="column is-4-desktop is-6-tablet gallery-item" data-category="object">
+        <video preload="none" controls muted loop playsinline width="100%">
+          <source src="static/videos/more/gallery_object_1.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-4-desktop is-6-tablet gallery-item" data-category="object">
+        <video preload="none" controls muted loop playsinline width="100%">
+          <source src="static/videos/more/gallery_object_2.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-4-desktop is-6-tablet gallery-item" data-category="object">
+        <video preload="none" controls muted loop playsinline width="100%">
+          <source src="static/videos/more/gallery_object_3.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-4-desktop is-6-tablet gallery-item" data-category="object">
+        <video preload="none" controls muted loop playsinline width="100%">
+          <source src="static/videos/more/gallery_object_4.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-4-desktop is-6-tablet gallery-item" data-category="object">
+        <video preload="none" controls muted loop playsinline width="100%">
+          <source src="static/videos/more/gallery_object_5.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-4-desktop is-6-tablet gallery-item" data-category="object">
+        <video preload="none" controls muted loop playsinline width="100%">
+          <source src="static/videos/more/gallery_object_6.mp4" type="video/mp4">
         </video>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+function openTab(evt, category) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("gallery-item");
+  for (i = 0; i < x.length; i++) {
+    if (category === 'all' || x[i].getAttribute('data-category') === category) {
+      x[i].classList.remove("is-hidden");
+    } else {
+      x[i].classList.add("is-hidden");
+    }
+  }
+  
+  tablinks = document.querySelectorAll(".tabs ul li");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].classList.remove("is-active");
+  }
+  evt.currentTarget.classList.add("is-active");
+}
+</script>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
