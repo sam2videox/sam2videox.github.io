@@ -142,6 +142,7 @@
   </div>
 </section>
 
+
 <section class="hero teaser">
   <div class="container is-max-widescreen">
     <div class="hero-body">
@@ -188,7 +189,31 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Why Distills from SAM2?</h2>
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Reality is a dance between rigid constraints and deformable structures. For video models, that means generating motion that preserves fidelity as well as <i>structure</i>.
+            Despite progress in diffusion models, producing realistic structure-preserving motion remains challenging, especially for articulated and deformable objects such as humans and animals. 
+            Scaling training data alone, so far, has failed to resolve physically implausible transitions. 
+            Existing approaches rely on conditioning with noisy motion representations, such as optical flow or skeletons extracted using an external imperfect model.
+            To address these challenges, we introduce an algorithm to distill structure-preserving motion priors from an autoregressive video tracking model (SAM2) into a bidirectional video diffusion model (CogVideoX). 
+            With our method, we train SAM2VideoX, which contains two innovations: (1) a <i>bidirectional feature fusion</i> module that extracts global structure-preserving motion priors from a recurrent model like SAM2; (2) a <i>Local Gram Flow</i> loss that aligns how local features move together.
+            Experiments on VBench and in human studies show that SAM2VideoX delivers consistent gains (+2.60% on VBench, 21-22% lower FVD, and 71.4% human preference) over prior baselines.
+            Specifically, on VBench, we achieve 95.51%, surpassing REPA (92.91%) by 2.60%, and reduce FVD to 360.57, a 21.20% and 22.46% improvement over REPA- and LoRA-finetuning, respectively.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Why Distill from SAM2?</h2>
     <div class="columns is-centered">
       <div class="column has-text-centered">
         <div class="content">
@@ -211,6 +236,27 @@
       <p>
         "SAM2's internal representations are dense, continuous, and temporally consistent. They capture object motion and part-level dynamics, providing rich structural priors that standard diffusion models lack."
       </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+        <img src="static/images/overall.png" id="overall" alt="Overview of SAM2VideoX pipeline displaying the bidirectional feature fusion and local gram flow loss"><br><br>
+        <div class="content has-text-justified">
+          <p>
+            <strong>Method overview.</strong> The framework consists of two parallel branches: 
+            <strong>(Top)</strong> The <i>Motion Prior Extraction</i> branch extracts forward and backward memory features 
+            from SAM2 given a clean video, and fuses them into a bidirectional teacher representation. 
+            <strong>(Bottom)</strong> The <i>Video Generation Backbone</i> takes noisy latents as input, and the intermediate DiT features 
+            <b>F</b><sub>diff</sub> are projected into the SAM2 space as <b>F̂</b><sub>diff</sub>. 
+            Then the proposed <strong>Local Gram Flow loss</strong> (<i>L</i><sub>feat</sub>) is used to align the spatio-temporal structure of the projected student features with the teacher priors.
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -386,45 +432,10 @@
   </div>
 </section>
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <img src="static/images/overall.png" id="overall" alt="Overview of SAM2VideoX pipeline displaying the bidirectional feature fusion and local gram flow loss"><br><br>
-        <div class="content has-text-justified">
-          <p>
-            Reality is a dance between rigid constraints and deformable structures. For video models, that means generating motion that preserves fidelity as well as <i>structure</i>.
-            Despite progress in diffusion models, producing realistic structure-preserving motion remains challenging, especially for articulated and deformable objects such as humans and animals. 
-            Scaling training data alone, so far, has failed to resolve physically implausible transitions. 
-            Existing approaches rely on conditioning with noisy motion representations, such as optical flow or skeletons extracted using an external imperfect model.
-            To address these challenges, we introduce an algorithm to distill structure-preserving motion priors from an autoregressive video tracking model (SAM2) into a bidirectional video diffusion model (CogVideoX). 
-            With our method, we train SAM2VideoX, which contains two innovations: (1) a <i>bidirectional feature fusion</i> module that extracts global structure-preserving motion priors from a recurrent model like SAM2; (2) a <i>Local Gram Flow</i> loss that aligns how local features move together.
-            Experiments on VBench and in human studies show that SAM2VideoX delivers consistent gains (+2.60% on VBench, 21-22% lower FVD, and 71.4% human preference) over prior baselines.
-            Specifically, on VBench, we achieve 95.51%, surpassing REPA (92.91%) by 2.60%, and reduce FVD to 360.57, a 21.20% and 22.46% improvement over REPA- and LoRA-finetuning, respectively.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
-    <!-- 
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/Kb4rn9z9xAA?si=ed2SLuZ6Jn-JiuKH"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-    -->
-  </div>
-</section>
 
 <section class="section">
   <div class="container is-max-widescreen">
-    <h2 class="title is-3 has-text-centered">Visual Comparison with Baselines</h2>
+    <h2 class="title is-3 has-text-centered">Why Features Matter?</h2>
     <div class="columns has-text-centered">
       <div class="column">
         <h3 class="title is-5">CogVideoX (Base)</h3>
