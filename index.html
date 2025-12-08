@@ -155,7 +155,7 @@
           </div>
           <div class="teaser-panel">
             <div class="teaser-frame">
-              <video preload="none" muted loop playsinline>
+              <video data-autoplay="true" preload="none" muted loop playsinline>
                 <source src="static/videos/teaser/base.mp4" type="video/mp4">
               </video>
             </div>
@@ -163,7 +163,7 @@
           </div>
           <div class="teaser-panel">
             <div class="teaser-frame">
-              <video preload="none" muted loop playsinline>
+              <video data-autoplay="true" preload="none" muted loop playsinline>
                 <source src="static/videos/teaser/lora.mp4" type="video/mp4">
               </video>
             </div>
@@ -171,7 +171,7 @@
           </div>
           <div class="teaser-panel">
             <div class="teaser-frame highlight">
-              <video preload="none" muted loop playsinline>
+              <video data-autoplay="true" preload="none" muted loop playsinline>
                 <source src="static/videos/teaser/ours.mp4" type="video/mp4">
               </video>
             </div>
@@ -633,10 +633,10 @@
 
     <div class="tabs is-centered is-boxed">
       <ul>
-        <li class="is-active" onclick="openTab(event, 'all')"><a>All</a></li>
-        <li onclick="openTab(event, 'human')"><a>Human Motion</a></li>
-        <li onclick="openTab(event, 'animal')"><a>Animal Locomotion</a></li>
-        <li onclick="openTab(event, 'object')"><a>Object Interaction</a></li>
+        <li data-tab="all" onclick="openTab(event, 'all')"><a>All</a></li>
+        <li class="is-active" data-tab="human" onclick="openTab(event, 'human')"><a>Human Motion</a></li>
+        <li data-tab="animal" onclick="openTab(event, 'animal')"><a>Animal Locomotion</a></li>
+        <li data-tab="object" onclick="openTab(event, 'object')"><a>Object Interaction</a></li>
       </ul>
     </div>
 
@@ -749,6 +749,10 @@ function openTab(evt, category) {
       x[i].classList.remove("is-hidden");
     } else {
       x[i].classList.add("is-hidden");
+      var nestedVideo = x[i].querySelector('video');
+      if (nestedVideo && !nestedVideo.paused) {
+        nestedVideo.pause();
+      }
     }
   }
   
@@ -756,8 +760,20 @@ function openTab(evt, category) {
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].classList.remove("is-active");
   }
-  evt.currentTarget.classList.add("is-active");
+
+  if (evt && evt.currentTarget) {
+    evt.currentTarget.classList.add("is-active");
+  } else {
+    var fallbackTab = document.querySelector(".tabs ul li[data-tab='" + category + "']");
+    if (fallbackTab) {
+      fallbackTab.classList.add("is-active");
+    }
+  }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  openTab(null, 'all');
+});
 </script>
 
 <section class="section" id="BibTeX">

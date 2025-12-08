@@ -89,24 +89,64 @@ $(document).ready(function() {
 
     bulmaSlider.attach();
 
-    // Lazy load/play videos
+    // Lazy load + throttle auto-play videos
+    var MAX_AUTO_VIDEOS = 4;
+    var activeAutoVideos = new Set();
+
+    function pauseAutoVideo(video) {
+      if (!video) {
+        return;
+      }
+      if (!video.paused) {
+        video.pause();
+      }
+      activeAutoVideos.delete(video);
+    }
+
+    function tryAutoPlay(video) {
+      if (activeAutoVideos.has(video)) {
+        return;
+      }
+      while (activeAutoVideos.size >= MAX_AUTO_VIDEOS) {
+        var first = activeAutoVideos.values().next().value;
+        pauseAutoVideo(first);
+      }
+      video.play()
+        .then(function() {
+          activeAutoVideos.add(video);
+        })
+        .catch(function(e) {
+          console.log("Play error:", e);
+        });
+    }
+
     var videos = document.querySelectorAll('video');
     var observer = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
+        var videoEl = entry.target;
+        var shouldAutoPlay = videoEl.dataset.autoplay === 'true';
         if (entry.isIntersecting) {
-          if (entry.target.paused) {
-            entry.target.preload = 'auto';
-            entry.target.play().catch(function(e) { console.log("Play error:", e); });
+          videoEl.preload = shouldAutoPlay ? 'auto' : 'metadata';
+          if (shouldAutoPlay) {
+            tryAutoPlay(videoEl);
           }
         } else {
-          if (!entry.target.paused) {
-            entry.target.pause();
+          videoEl.preload = 'none';
+          if (shouldAutoPlay) {
+            pauseAutoVideo(videoEl);
+          } else if (!videoEl.paused) {
+            videoEl.pause();
           }
         }
       });
-    }, { threshold: 0.1, rootMargin: '200px' });
+    }, { threshold: 0.35, rootMargin: '200px' });
 
     videos.forEach(function(video) {
       observer.observe(video);
+      video.addEventListener('pause', function() {
+        if (video.dataset.autoplay === 'true') {
+          activeAutoVideos.delete(video);
+        }
+      });
     });
 })
